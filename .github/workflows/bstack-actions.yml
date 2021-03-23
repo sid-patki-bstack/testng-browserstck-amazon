@@ -27,11 +27,8 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-
       - name: 'Running test on BrowserStack'
-        run: mvn test -P single
+        run: mvn install -P single
 
       - name: 'BrowserStackLocal Stop'
         uses: browserstack/github-actions/setup-local@master

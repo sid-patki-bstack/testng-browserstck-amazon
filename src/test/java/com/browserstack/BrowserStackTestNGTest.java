@@ -51,7 +51,7 @@ public class BrowserStackTestNGTest {
             username = (String) config.get("user");
         }
 
-        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+        String accessKey = System.getenv("BROWSERSTACK_KEY");
         if (accessKey == null) {
             accessKey = (String) config.get("key");
         }
@@ -65,7 +65,7 @@ public class BrowserStackTestNGTest {
         }
 
         driver = new RemoteWebDriver(
-                new URL("http://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities);
+                new URL("https://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities);
     }
 
     @AfterMethod(alwaysRun = true)

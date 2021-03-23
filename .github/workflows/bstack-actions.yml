@@ -30,10 +30,10 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: 'Running test on BrowserStack'  # Invokes the actual test script that would run on BrowserStack browsers
-        run: mvn test -P single  # See sample test script above
+      - name: 'Running test on BrowserStack'
+        run: mvn test -P single
 
-      - name: 'BrowserStackLocal Stop'  # Terminating the BrowserStackLocal tunnel connection
+      - name: 'BrowserStackLocal Stop'
         uses: browserstack/github-actions/setup-local@master
         with:
           local-testing: stop

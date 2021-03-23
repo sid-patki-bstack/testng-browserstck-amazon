@@ -51,7 +51,7 @@ public class BrowserStackTestNGTest {
             username = (String) config.get("user");
         }
 
-        String accessKey = System.getenv("BROWSERSTACK_KEY");
+        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
         if (accessKey == null) {
             accessKey = (String) config.get("key");
         }
